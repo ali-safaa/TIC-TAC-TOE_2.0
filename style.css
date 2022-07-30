@@ -70,12 +70,6 @@ body {
   grid-gap: 0px;
   padding: 10px;
 }
-.winner {
-  font-size: 60px;
-  margin-left: 160px;
-  margin-top: 10px;
-  display: flex;
-}
 .board-title {
   display: flex;
   align-items: center;

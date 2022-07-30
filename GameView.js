@@ -5,7 +5,6 @@ class GameView {
 
     for (let i = 0; i < game.board.length; i++) {
       const title = document.querySelector(`.board-title[data-index='${i}']`);
-      const board = document.querySelector('.board');
       console.log(title);
       title.textContent = game.board[i];
 
@@ -14,9 +13,10 @@ class GameView {
       title.innerHTML = `<span class="${titleType}">${
         game.board[i] ? game.board[i] : ''
       }</span>`;
-      if (winningCombinations) {
-        title.remove();
-        board.innerHTML = `<h1 class="winner">You winner</h1>`;
+
+      title.classList.remove('title-winner');
+      if (winningCombinations && winningCombinations.includes(i)) {
+        title.classList.add('title-winner');
       }
     }
   }
